@@ -1,0 +1,403 @@
+<html>
+    <head>
+    <title>Internship</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <body>
+    <div class="b-box">
+        <div class="degree">
+            <span class="material-symbols-outlined" style="position: absolute;color: white;margin-top:61;margin-left:30; font-size:20px">near_me</span><h6 class="location">Delhi</h6><br>
+            <h6 class="date">09/07/2023</h6>
+            <h1>25°</h1>
+            <span class="material-symbols-outlined" style="color: white;margin-top:-95;margin-left:35; font-size:20px">light_mode </span>
+            <h6 class="temp">Sunny</h6></div>
+        <img class="img" src="delhi sun.png" alt="">
+        <div class="w-box">
+            <img src="pfp.png" alt="" class="pfp">
+            <h3>Welcome back Isabella!</h3><br><h6>Check out today's weather information</h6>
+            <div class="chart">
+                <h5>Upcoming Hours</h5>
+            
+                <span class="time"> Now </span>
+                <span class="time"> 10:00 </span>
+                <span class="time"> 12:35 </span>
+                <span class="time"> 13:40 </span>
+                <span class="time"> 15:30 </span>
+                 
+                <span class="material-symbols-outlined">light_mode </span>
+                <span class="material-symbols-outlined">cloud </span>
+                <span class="material-symbols-outlined">light_mode </span>
+                <span class="material-symbols-outlined">light_mode </span>
+                <span class="material-symbols-outlined">cloud </span>
+                <div class="graph"><canvas id="myChart" style="width:100%;max-width:640px"></canvas></div>
+                
+
+            </div>
+            <h6 class="downline">More details of today's weather</h6>
+            <div class="meter">
+                <div class="chart-1">
+                    <h5 class="tag">Humidity</h5>
+                    <span class="material-symbols-outlined" style="margin-top: -45px;margin-left:180px;padding:1 1 1 1;color:white;background-color: #5C9CE5;border-radius: 5px;">humidity_mid</span>
+                    <h6 class="humi">Bad &nbsp &nbsp &nbsp Normal &nbsp &nbsp &nbsp Good</h6>
+                    <div class="bar">
+                        <div class="bef-1"></div>
+                    </div>
+                </div>
+                <div class="chart-2">
+                    <h5 class="tag">Wind (kms)</h5>
+                    <span class="material-symbols-outlined" style="margin-top: -45px;margin-left: 180px;padding:1 1 1 1;color:white;background-color: #5C9CE5;border-radius: 5px;">air </span>
+                    <div class="dial">
+                        <div class="needle"></div>
+                      </div>
+                      <div class="labels">
+                        <span class="label">0</span>
+                        <span class="label">5</span>
+                        <span class="label">10</span>
+                        <span class="label">15</span>
+                        <span class="label">20</span>
+                      </div>
+                </div>
+                <div class="chart-3">
+                    <h5 class="tag">Chance of rain</h5>
+                    <span class="material-symbols-outlined" style="margin-top: -45px;margin-left: 180px; padding:1 1 1 1;color:white;background-color: #5C9CE5;border-radius: 5px;">rainy</span>
+                        <h6 class="rain">20% &nbsp 40% &nbsp 60% &nbsp 80% &nbsp 100%</h6>
+                    <div class="bar">
+                        <div class="bef-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+        </div>
+    </body>
+    <style>
+        
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@50;100;200;300;400;450;500;550;600&family=Geologica:wght@200;300;400;500&family=Josefin+Sans:wght@400;500;600&display=swap');
+
+       *{
+            font-family: poppins;
+        }
+        body{
+            background-color: #B5D8FF;
+            display: flex;
+
+        }
+        .b-box{
+            background-color:  #5C9CE5;
+            width:85%;
+            height:700px;
+            margin:auto;
+            border-radius: 50px; 
+            overflow: hidden;
+        }
+        .w-box{
+            background-color: #E4F1FF;
+            width:70%;
+            height:700px;
+            border-radius: 50px;
+            margin-top: -60.35%;
+            margin-left: 315px;
+            font-size: 22px;
+            font-weight: 500;
+            padding-left: 50px;
+        }
+        h3{
+            font-size: 22px;
+            margin-bottom: -30;
+            font-weight: 600;
+            padding-top: 15px;
+        }
+        h6{
+            font-size: 15px;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+        h5{
+            font-size: 13px;
+            font-weight: 400;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+        .chart{
+            background-color: #FFFFFF;
+            height: 230px;
+            margin-right: 50px;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        span{
+            color: rgb(0, 0, 0);
+            padding: 0px 40px 0px 80px
+        }
+        .time{
+            font-size: 50%;
+            font-weight: 600;
+        
+        }
+        .img{
+           filter:saturate(80%);
+           
+           filter: drop-shadow(5px 5px 10px rgb(78, 78, 78));
+           margin-top: 188;
+           margin-left: -5%;
+        }
+        .degree{
+            position: absolute;
+        }
+        h1{
+            color: white;
+            font-weight: 400;
+            font-size: 80px;
+            padding: 0 0 20 100;
+            margin-top: -40;
+        }
+        .temp{
+            color: white;
+            font-weight: 500;
+            padding-left: 140;
+            margin-top: -97px; 
+        }
+        .location{
+            color: white;
+            font-weight: 500;
+            margin-top: 60px;
+            padding-bottom:5px;
+            margin-left: 135;
+        }
+        .date{
+            color:white;
+            margin-top: -58px;
+            margin-left: 106;
+        }
+        .downline{
+        font-size: 15px;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+        .chart-1{
+            background-color: #FFFFFF;
+            height: 150px;
+            margin-right: 38px;
+            border-radius: 30px;
+            width:240px;
+            float:left;
+            overflow: hidden;
+        }
+        .chart-2{
+            background-color: #FFFFFF;
+            height: 150px;
+            margin-right: 20px;
+            border-radius: 30px;
+            width:240px;
+            float:left;
+            overflow: hidden;
+        }
+        .chart-3{
+            background-color: #FFFFFF;
+            height: 150px;
+            margin-right: 50px;
+            border-radius: 30px;
+            width:240px;
+            float:right;
+        }
+        .tag{
+            margin-top: 3px;
+        }
+        .pfp{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            margin-left: 745px;
+            margin-top: 22px;
+        }
+
+.dial {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: ;
+}
+
+.needle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 60px solid #5C9CE5;
+  border-radius: 50px;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(-75deg);
+  transition: transform 0.5s;
+}
+
+.labels {
+  position: absolute;
+  transform: translateX(-33%);
+  width: 50%;
+  text-align: center;
+  bottom:400px;
+}
+
+.label {
+  position: absolute;
+  transform-origin: center bottom;
+  transform: translateX(-50%) rotate(0deg);
+  width: 50%;
+  font-size: 70%;
+  text-align: center;
+  overflow: hidden;
+  padding: 100px 100px 100px 100px ;
+  
+}
+
+.label:nth-child(1) {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.label:nth-child(2) {
+  transform: translateX(-50%) rotate(-22.5deg);
+}
+
+.label:nth-child(3) {
+  transform: translateX(-50%) rotate(0deg);
+}
+.label:nth-child(4) {
+  transform: translateX(-50%) rotate(22.5deg);
+}
+.label:nth-child(5) {
+  transform: translateX(-50%) rotate(45deg);
+}
+        .bar{
+            width:150px;
+            height:1vh;
+            background-color: #ffffff;
+            border-radius:10px; 
+            margin-left: 18%;
+            margin-top: 40px;
+            margin-right: 18%;
+        }
+        .bef-1{
+            width: 0%;
+            height:1vh;
+            border-radius: 10px;
+            background-color: #5C9CE5;
+            animation: ani 0.6s ease-in-out forwards;
+        
+        }
+        .bef-2{
+            width: 0%;
+            height:1vh;
+            border-radius: 10px;
+            background-color: #5C9CE5;
+            animation: ani-2 0.6s ease-in-out forwards;
+        }
+        @keyframes ani{
+            100%{
+                width:20%
+            }
+        }
+        @keyframes ani-2{
+            100%{
+                width:65%
+            }
+        }
+    .rain{
+        display: flex;
+        position: absolute;
+        width:100%;
+        font-size: 50%;
+        margin-left: 43px;
+        margin-top: 35px;
+         }
+    .humi{
+        
+        display: flex;
+        position: absolute;
+        width:100%;
+        font-size: 50%;
+        margin-left: 4%;
+        margin-top: 35px;
+    }    
+
+    #myChart{
+        margin-top: -190px;
+        margin-left: 8%;
+    }
+    .graph{
+        overflow: hidden;
+    }
+
+
+
+
+    </style>
+    <script>
+        function introAnimation(targetSpeed) {
+  const animationDuration = 1000; // Duration of the animation in milliseconds
+  const framesPerSecond = 60; // Number of animation frames per second
+  const totalFrames = animationDuration / (500 / framesPerSecond);
+  const speedIncrement = targetSpeed / totalFrames;
+
+  let currentSpeed = 0;
+  let frameCount = 0;
+
+  const needleElement = document.querySelector('.needle');
+
+  const animationInterval = setInterval(() => {
+    if (frameCount === totalFrames) {
+      clearInterval(animationInterval);
+      currentSpeed = targetSpeed; // Set the current speed to the target speed
+    }
+
+    const rotationAngle = 30;
+    needleElement.style.transform = `translateX(-50%) rotate(${rotationAngle}deg)`;
+
+    currentSpeed += speedIncrement;
+    frameCount++;
+  }, 1000 / framesPerSecond);
+}
+introAnimation(60);
+
+ //chart------------------------------js//
+ 
+const xValues = [23,35,50,36,29];
+const yValues = [6,4,8,10,5];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: true,
+      lineTension: 0,
+      backgroundColor: "#5C9CE5",
+      borderColor: "#5C9CE5",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+        xAxes: [{
+        gridLines: {
+          display: true
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          display: false
+        },
+        ticks: {min: 0, max:30}
+    }],
+    }
+  }
+});
+
+
+    </script>
+</html>
